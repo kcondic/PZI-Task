@@ -1,0 +1,141 @@
+html {
+    --white: rgb(241, 237, 237);
+    --light-black: rgb(39, 37, 37);
+    --light-blue: rgb(49, 172, 209);
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 5px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}
+
+a {
+    text-decoration: none;
+}
+
+.header-links {
+    display: flex;
+    background-color: var(--light-black);
+    padding: 0.5em 0.5em 0 0.5em;      
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header-links a {
+    margin-left: 2.5em;
+    padding-bottom: 5px;
+    color: var(--white);
+}
+
+.header-links a:hover {
+    border-bottom: 4px solid var(--white);
+}
+
+.header-links a.selected {
+    border-bottom: 4px solid var(--white);
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    max-width: 1100px;
+}
+
+.title-line {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.title-line h1 {
+    margin-right: auto;
+}
+
+.title-line img {
+    margin-right: 2px;
+    height: 2em;
+}
+
+.title-line a:first-of-type {
+    color: var(--light-blue);
+    margin-right: 10px;
+}
+
+.container {
+    width: 100%;
+    border: 4px solid var(--light-black);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+#page-subtitle {
+    font-size: 20px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+#main-container {
+    display: flex;
+    position: relative;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: scale(2.5);
+
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}
+
+.slider-arrow:hover {
+    cursor: pointer;
+}
+
+.slider-arrow-left {
+    left: -40px;
+}
+
+.slider-arrow-right {
+    right: -40px;
+}
+
+.slider-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.image-rating {
+    display:inline-block;
+    white-space: nowrap;
+    height:30px;
+    width:30px;
+}
+
+.slider-image-space {
+    text-align: center;
+}
+
+button {
+    width: 100px; 
+}
