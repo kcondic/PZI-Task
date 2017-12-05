@@ -1,13 +1,14 @@
 html {
     --white: rgb(241, 237, 237);
-    --light-black: rgb(39, 37, 37);
+    --light-black: rgb(51, 50, 50);
     --light-blue: rgb(49, 172, 209);
+    --soft-green: rgb(183, 247, 183);
+    --light-yellow: rgb(241, 241, 137);
+    --red: rgb(248, 60, 60);
 }
 
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 5px;
 }
 
 img {
@@ -32,6 +33,7 @@ a {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 99;
 }
 
 .header-links a {
@@ -78,10 +80,14 @@ main {
 
 .container {
     width: 100%;
-    border: 4px solid var(--light-black);
+    border: 2px solid var(--light-black);
     border-radius: 10px;
     padding: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+
+    -webkit-box-shadow: 10px 10px 8px 0px rgba(183,247,183,0.5);
+    -moz-box-shadow: 10px 10px 8px 0px rgba(183,247,183,0.5);
+    box-shadow: 10px 10px 8px 0px rgba(183,247,183,0.5);
 }
 
 #page-subtitle {
@@ -122,20 +128,138 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center; 
-}
-
-.image-rating {
-    display:inline-block;
-    white-space: nowrap;
-    height:30px;
-    width:30px;
+    align-items: center;
+    margin-right: 10px; 
 }
 
 .slider-image-space {
-    text-align: center;
+    align-self: center;
+}
+
+.image-rating {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+    direction: rtl;
+}
+
+.image-rating div {
+    transform: scale(2.5);
+    margin-right: 15px;
+    align-self: center;
+    
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}
+
+.main-image-title {
+    margin-right: auto;
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
 }
 
 button {
-    width: 100px; 
+    width: 100px;
+    padding: 5px 2px;
+    border-radius: 8px 0;
+    background-color: var(--soft-green);
+    cursor: pointer;
+}
+
+.image-rating > div:hover:before,
+.image-rating > div:hover ~ :before {
+    cursor: pointer;
+    color: var(--light-yellow);
+    content: "\2605";
+    position: absolute;
+}
+
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    margin: 10px;
+    width: calc(33% - 20px);
+    position: relative;
+    text-align: center;
+}
+
+.card img {
+    height: 200px;
+    width: 100%;
+}
+
+.card .delete-button {
+    position: absolute;
+    top: -0.5em;
+    right: -0.5em;
+
+    padding: 0 3px;
+    color: var(--white);
+    background-color: var(--red);
+    border-radius: 50px;
+
+    cursor: pointer;
+    transition: transform 0.2s;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}
+
+.card .image-subtitle, .card button {
+    margin: 3px 0;
+}
+
+.card button:hover {
+    -webkit-box-shadow: 10px 10px 8px 0px rgba(80, 90, 233, 0.5);
+    -moz-box-shadow: 10px 10px 8px 0px rgba(80, 90, 233, 0.5);
+    box-shadow: 10px 10px 8px 0px rgba(80, 90, 233, 0.5);
+}
+
+.card.selected button {
+    -webkit-box-shadow: 10px 10px 8px 0px rgba(80, 90, 233, 0.5);
+    -moz-box-shadow: 10px 10px 8px 0px rgba(80, 90, 233, 0.5);
+    box-shadow: 10px 10px 8px 0px rgba(80, 90, 233, 0.5);
+}
+
+.card .delete-button:hover {
+    transform: scale(1.2);
+}
+
+#add-car {
+    margin-left: auto;
+}
+
+footer {
+    position: relative;
+    display: flex;
+    height: 50px; 
+    background-color: var(--light-black);
+    color: var(--white);
+    margin-top: 50px;
+    align-items: center;
+}
+
+footer a img {
+    margin-left:5px;
+    width: 50px;
+}
+
+#footer-text {
+    margin: auto;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--white);
+    margin-right: 5px;
 }
